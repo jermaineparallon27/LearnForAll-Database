@@ -1,0 +1,15 @@
+<nav>
+    <ul>
+        {% if session.get('user_id') %}
+            <li><a href="{{ url_for('materials.list_materials') }}">Materials</a></li>
+            <li><a href="{{ url_for('quizzes.list_quizzes') }}">Quizzes</a></li>
+            <li><a href="{{ url_for('progress.progress_dashboard') }}">Progress</a></li>
+            <li><a href="{{ url_for('admin.admin_materials') }}">Manage Materials</a></li>
+            <li><a href="{{ url_for('admin.admin_quizzes') }}">Manage Quizzes</a></li>
+            <li><a href="{{ url_for('auth.logout') }}">Logout</a></li>
+        {% else %}
+            <li><a href="{{ url_for('auth.login') }}">Login</a></li>
+            <li><a href="{{ url_for('auth.register') }}">Register</a></li>
+        {% endif %}
+    </ul>
+</nav>
