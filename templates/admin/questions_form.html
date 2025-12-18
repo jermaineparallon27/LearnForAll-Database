@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>{% if question %}Edit{% else %}Add{% endif %} Question</h2>
+
+<form method="POST">
+    <label>Question Text</label>
+    <textarea name="question_text">{% if question %}{{ question.question_text }}{% endif %}</textarea>
+
+    <label>Choice A</label>
+    <input type="text" name="choice_a">
+    <label>Choice B</label>
+    <input type="text" name="choice_b">
+    <label>Choice C</label>
+    <input type="text" name="choice_c">
+    <label>Choice D</label>
+    <input type="text" name="choice_d">
+    <select name="correct_choice">
+        <option value="A">A</option>
+        <option value="B">B</option>
+        <option value="C">C</option>
+        <option value="D">D</option>
+    </select>
+
+    <button type="submit">{% if question %}Update{% else %}Save{% endif %}</button>
+</form>
+{% endblock %}

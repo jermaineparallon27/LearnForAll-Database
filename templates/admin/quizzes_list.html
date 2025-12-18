@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Manage Quizzes</h2>
+
+<form action="{{ url_for('admin.create_quiz') }}" style="display:inline;">
+    <button type="submit">Add Quiz</button>
+</form>
+
+<ul>
+    <h1>{% for q in quizzes %}</h1>
+    <li>
+        {{ q.title }} —
+        <form action="{{ url_for('admin.quiz_questions', quiz_id=q.id) }}" style="display:inline;">
+            <button type="submit">Manage Questions</button>
+        </form> |
+        <form action="{{ url_for('admin.edit_quiz', quiz_id=q.id) }}" style="display:inline;">
+            <button type="submit">Edit</button>
+        </form> |
+        <form action="{{ url_for('admin.delete_quiz', quiz_id=q.id) }}" method="POST" style="display:inline;">
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

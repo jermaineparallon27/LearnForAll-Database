@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Manage Materials</h2>
+
+<form action="{{ url_for('admin.create_material') }}" style="display:inline;">
+    <button type="submit">Add Material</button>
+</form>
+
+<ul>
+    <h1>{% for m in materials %}</h1>
+    <li>
+        {{ m.title }} — 
+        <form action="{{ url_for('admin.edit_material', material_id=m.id) }}" style="display:inline;">
+            <button type="submit">Edit</button>
+        </form> |
+        <form action="{{ url_for('admin.delete_material', material_id=m.id) }}" method="POST" style="display:inline;">
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+    {% endfor %}
+</ul>
+{% endblock %}

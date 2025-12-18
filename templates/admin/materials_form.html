@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block content %}
+<h2>Add Material</h2>
+
+<form method="POST" enctype="multipart/form-data" action="{{ url_for('admin.edit_material', material_id=material.id) if material else url_for('admin.create_material') }}">
+    <label>Title</label>
+    <input type="text" name="title" value="{{ material.title if material else '' }}">
+
+    <label>Description</label>
+    <textarea name="description">{{ material.description if material else '' }}</textarea>
+
+    <label>Category</label>
+    <input type="text" name="category" value="{{ material.category if material else '' }}">
+
+    <label>Upload File</label>
+    <input type="file" name="file">
+
+    <button type="submit">{{ 'Update' if material else 'Save' }}</button>
+</form>
+{% endblock %}
