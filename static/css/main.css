@@ -1,0 +1,234 @@
+/* main.css */
+
+/* Import modern font */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+/* Reset & base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    display: flex;
+    min-height: 100vh;
+    background: #f5f7fa;
+    color: #333;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background: #1e1e2f;
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 1rem;
+    transition: width 0.3s ease;
+}
+
+.sidebar h2 {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+    color: #fff;
+}
+
+.sidebar a {
+    color: #cfd8dc;
+    text-decoration: none;
+    padding: 0.2rem 1rem;      
+    margin-bottom: 0.5rem;     
+    border-radius: 8px;
+    transition: background 0.2s, color 0.2s;
+    display: block;
+}
+
+.sidebar a:hover {
+    background: #3a3a5c;
+    color: #fff;
+}
+
+/* Content */
+.content {
+    flex: 1;
+    padding: 2rem 3rem;
+    background: #ffffff;
+    background: linear-gradient(180deg,rgb(255, 255, 255) 0%, rgba(121, 137, 242, 1) 100%);
+    background-image: url(/static/img/logos/bg-pattern-pages.png);
+    background-repeat: repeat;
+}
+
+/* Headings */
+h1, h2, h3, h4 {
+    color: #1e1e2f;
+    margin-bottom: 1rem;
+}
+
+/* Buttons */
+button {
+    padding: 0.6rem 1.2rem;
+    background: #4f46e5;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+button:hover {
+    background: #6366f1;
+}
+
+/* Forms */
+input[type="text"], textarea, select, input[type="file"] {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    outline: none;
+    font-size: 1rem;
+}
+
+input[type="password"], textarea, select, input[type="file"] {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    outline: none;
+    font-size: 1rem;
+}
+
+input[type="email"], textarea, select, input[type="file"] {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    outline: none;
+    font-size: 1rem;
+}
+
+input[type="submit"], textarea, select, input[type="file"] {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    outline: none;
+    font-size: 1rem;
+}
+
+input:focus, textarea:focus, select:focus {
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 2px rgba(79,70,229,0.2);
+}
+
+/* Table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 2rem;
+}
+
+th, td {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background: #4f46e5;
+    color: #fff;
+    text-align: left;
+}
+
+/* Cards */
+.card {
+    background: #fff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    margin-bottom: 1.5rem;
+}
+
+/* Links inside content */
+.content a {
+    color: #4f46e5;
+    text-decoration: none;
+}
+
+.content a:hover {
+    text-decoration: underline;
+}
+
+.choice-container laber {
+    display: block;
+    margin: 8px 0;
+    line-height: 1.5rem;
+}
+
+.choice-container-a,
+.choice-container-b,
+.choice-container-c,
+.choice-container-d {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 18px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+    background: #ffffff;
+    border: 2px solid #e5e7eb;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-weight: 500;
+}
+
+.choice-container-a:hover,
+.choice-container-b:hover,
+.choice-container-c:hover,
+.choice-container-d:hover {
+    border-color: #6366f1;
+    background: #f5f7ff;
+}
+
+.choice-label {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    background: #6366f1;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 600;
+    flex-shrink: 0;
+}
+
+.choice-text {
+    flex: 1;
+    font-size: 16px;
+    color: #111827;
+}
+
+/* Selected */
+.choice-selected {
+    border-color: #6366f1;
+    background: #eef2ff;
+}
+
+/* Correct / Wrong (after submit) */
+.choice-correct {
+    border-color: #16a34a;
+    background: #ecfdf5;
+}
+
+.choice-wrong {
+    border-color: #dc2626;
+    background: #fef2f2;
+}
